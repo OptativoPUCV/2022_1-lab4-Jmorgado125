@@ -49,7 +49,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   else
   {
     while(map->buckets[pos] != NULL){
-      pos++;
+      pos=pos+1;
       if(map->buckets[pos]==NULL){
         map->buckets[pos]=createPair(key,value);
         map->current=pos;
