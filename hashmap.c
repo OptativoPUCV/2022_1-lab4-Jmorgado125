@@ -91,9 +91,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-  Pair * aux=(Pair *)malloc(sizeof(Pair));
-  aux->key=map->buckets[0]->key;
-  aux->value=map->buckets[0]->value;
+  Pair * aux=createPair(map->buckets[0]->key,map->buckets[0]->value);
   map->current=0;
   return aux;
 }
