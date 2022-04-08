@@ -55,7 +55,7 @@ HashMap * createMap(long capacity) {
   Ncap=capacity;
   HashMap * aux=(HashMap *)malloc(sizeof(HashMap));
   aux->buckets=(Pair**)calloc(Ncap,sizeof(Pair*));
-  aux->capcity=Ncap;
+  aux->capacity=Ncap;
   aux->size=0;
   aux->current=-1;
   return aux;

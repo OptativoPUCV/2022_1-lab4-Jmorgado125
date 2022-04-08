@@ -18,3 +18,15 @@ hashmap.c:58:8: error: ‘HashMap {aka struct HashMap}’ has no member named �
         capacity
 Compilation failed
 186b325
+Fri Apr  8 15:29:01 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:55:3: error: ‘Ncap’ undeclared (first use in this function); did you mean ‘bcmp’?
+   Ncap=capacity;
+   ^~~~
+   bcmp
+hashmap.c:55:3: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+156f0ee
