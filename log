@@ -30,3 +30,9 @@ hashmap.c:55:3: error: ‘Ncap’ undeclared (first use in this function); did y
 hashmap.c:55:3: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 156f0ee
+Fri Apr  8 15:29:11 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|5
+total_score: 10/70
+234f6c9
