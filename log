@@ -2,3 +2,19 @@ Fri Apr  8 15:13:22 UTC 2022:
  tests:  0|6
 total_score: 0/70
 d73e751
+Fri Apr  8 15:28:52 UTC 2022: 
+ hashmap.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘createMap’:
+hashmap.c:55:3: error: ‘Ncap’ undeclared (first use in this function); did you mean ‘bcmp’?
+   Ncap=capacity;
+   ^~~~
+   bcmp
+hashmap.c:55:3: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:58:8: error: ‘HashMap {aka struct HashMap}’ has no member named ‘capcity’; did you mean ‘capacity’?
+   aux->capcity=Ncap;
+        ^~~~~~~
+        capacity
+Compilation failed
+186b325
