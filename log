@@ -36,3 +36,26 @@ Fri Apr  8 15:29:11 UTC 2022:
  tests:  1|5
 total_score: 10/70
 234f6c9
+Fri Apr  8 15:37:42 UTC 2022: 
+ hashmap.c | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:44:12: error: ‘HashMap {aka struct HashMap}’ has no member named ‘bucket’; did you mean ‘buckets’?
+   if (map->bucket==NULL){
+            ^~~~~~
+            buckets
+hashmap.c:45:10: error: ‘HashMap {aka struct HashMap}’ has no member named ‘bucket’; did you mean ‘buckets’?
+     map->bucket[pos]=value;
+          ^~~~~~
+          buckets
+hashmap.c:51:16: error: ‘HashMap {aka struct HashMap}’ has no member named ‘bucket’; did you mean ‘buckets’?
+     while(map->bucket!=NULL){
+                ^~~~~~
+                buckets
+hashmap.c:53:12: error: ‘HashMap {aka struct HashMap}’ has no member named ‘bucket’; did you mean ‘buckets’?
+       map->bucket[pos]=value;
+            ^~~~~~
+            buckets
+Compilation failed
+3ec2afa
