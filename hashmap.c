@@ -111,6 +111,7 @@ Pair * firstMap(HashMap * map) {
   if(aux !=NULL){
     return aux;  
   }
+  return aux;
 }
 
 Pair * nextMap(HashMap * map) {
