@@ -47,8 +47,10 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->size++;
   }
   else
-  {
     while(map->buckets[pos] != NULL){
+      if (pos==map->size){
+        pos=-1;
+      }
       pos=pos+1;
       if(map->buckets[pos]==NULL){
         map->buckets[pos]=createPair(key,value);
@@ -56,16 +58,13 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->size++;
         break;
       }
-    }
-    
-    
-  }
+  }  
 }
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-
-
+  
+  
 }
 
 
@@ -79,24 +78,45 @@ HashMap * createMap(long capacity) {
   return aux;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
-
-
+void eraseMap(HashMap * map,  char * key){
+  Pair * aux=searchMap(map,key);
+  if(aux != NULL){
+    aux->key=NULL;
+    aux->value=NULL;
+    map->size=map->size-1;  
+  }
+  
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
-
-
-    return NULL;
+Pair * searchMap(HashMap * map,  char * key) {
+  long posClave=hash(key,map->capacity);
+  if(map->buckets[posClave]==NULL){
+      map->current=posClave;
+      return NULL;
+  }
+  while(map->buckets[posClave]!= NULL)
+  {
+    if(strcmp(map->buckets[posClave]->key,key) == 0){
+      map->current=posClave;
+      return map->buckets[posClave];
+    }
+    posClave=posClave+1;
+  }
+  return map->buckets[posClave];
 }
 
 Pair * firstMap(HashMap * map) {
-  Pair * aux=createPair(map->buckets[0]->key,map->buckets[0]->value);
+  Pair * aux=map->buckets[0];
   map->current=0;
-  return aux->value;
+  if(aux !=NULL){
+    return aux;  
+  }
+  return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
-
-    return NULL;
+  long posCurrent=map->current;
+  Pair * aux=map->buckets[posCurrent+1];
+  map->current++;
+  return aux;
 }
