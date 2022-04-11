@@ -113,7 +113,9 @@ Pair * firstMap(HashMap * map) {
   }
   while(aux==NULL){
     aux=nextMap(map);
-    if(aux != NULL){return aux;}
+    if(aux != NULL){
+      return aux;
+    }
   }
 }
 
